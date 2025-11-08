@@ -1,0 +1,136 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\benevila\logo-h.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\benevila\logo-h.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\benevila\logo-h.webp">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\benevila\logo-v.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\benevila\logo-v.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\benevila\logo-v.webp">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\benevila\logo.ico">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\benevila\logo.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\benevila\logo.psd">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\benevila\logo.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\benevila\logo.webp">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\customize\site.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
+        <PackageReference Include="Azure.Core" Version="1.47.3" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.8" />
+        <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.14.8" />
+        <PackageReference Include="Microsoft.ClearScript.V8" Version="7.5.0" />
+        <PackageReference Include="Microsoft.ClearScript.V8.Native.linux-x64" Version="7.5.0" />
+        <PackageReference Include="Microsoft.ClearScript.V8.Native.osx-x64" Version="7.5.0" />
+        <PackageReference Include="Microsoft.ClearScript.V8.Native.win-x64" Version="7.5.0" />
+        <PackageReference Include="Microsoft.ClearScript.V8.Native.win-x86" Version="7.5.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.14.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.14.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Razor" Version="6.0.36" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.Extensions" Version="6.0.36" />
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.8">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.14.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.14.0">
+            <!-- Prevents BuildHost folders from being copied into the project -->
+            <ExcludeAssets>contentFiles</ExcludeAssets>
+        </PackageReference>
+        <PackageReference Include="System.Runtime.Caching" Version="9.0.8" />
+        <PackageReference Include="SQLitePCLRaw.lib.e_sqlite3" Version="2.1.11" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Smartstore\Smartstore.csproj" />
+        <ProjectReference Include="..\Smartstore.Core\Smartstore.Core.csproj" />
+        <ProjectReference Include="..\Smartstore.Web.Common\Smartstore.Web.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="Views\**\*.cshtml">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </Content>
+    </ItemGroup>
+
+    <!-- Define paths for copying -->
+    <PropertyGroup>
+        <SmartstoreWebPath>..\Smartstore.Web</SmartstoreWebPath>
+    </PropertyGroup>
+
+    <!-- Define file collections for copying -->
+    <ItemGroup>
+        <CustomizeViews Include="Views\**\*.cshtml" />
+        <CustomizeWwwroot Include="wwwroot\**\*.*" />
+    </ItemGroup>
+
+    <!-- Copy Views to Smartstore.Web during build -->
+    <Target Name="CopyCustomizeViews" AfterTargets="Build">
+        <Message Text="Copying custom Views to Smartstore.Web..." Importance="high" />
+        <Copy SourceFiles="@(CustomizeViews)" DestinationFiles="@(CustomizeViews->'$(SmartstoreWebPath)\Views\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    </Target>
+
+    <!-- Copy wwwroot to Smartstore.Web during build -->
+    <Target Name="CopyCustomizeWwwroot" AfterTargets="Build">
+        <Message Text="Copying custom wwwroot to Smartstore.Web..." Importance="high" />
+        <Copy SourceFiles="@(CustomizeWwwroot)" DestinationFiles="@(CustomizeWwwroot->'$(SmartstoreWebPath)\wwwroot\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    </Target>
+
+    <!-- Copy Views to Smartstore.Web during publish -->
+    <Target Name="CopyCustomizeViewsOnPublish" BeforeTargets="Publish">
+        <Message Text="Publishing custom Views to Smartstore.Web..." Importance="high" />
+        <Copy SourceFiles="@(CustomizeViews)" DestinationFiles="@(CustomizeViews->'$(SmartstoreWebPath)\Views\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    </Target>
+
+    <!-- Copy wwwroot to Smartstore.Web during publish -->
+    <Target Name="CopyCustomizeWwwrootOnPublish" BeforeTargets="Publish">
+        <Message Text="Publishing custom wwwroot to Smartstore.Web..." Importance="high" />
+        <Copy SourceFiles="@(CustomizeWwwroot)" DestinationFiles="@(CustomizeWwwroot->'$(SmartstoreWebPath)\wwwroot\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    </Target>
+</Project>

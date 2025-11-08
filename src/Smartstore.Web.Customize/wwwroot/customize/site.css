@@ -1,0 +1,8 @@
+﻿html {
+    font-size: 16px;
+}
+
+.shop-logo > .brand > img {
+  height: 100px !important;
+  width: auto !important;
+}

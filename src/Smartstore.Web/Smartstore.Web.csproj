@@ -43,6 +43,7 @@
 	</ItemGroup>
 
 	<ItemGroup> 
+		<ProjectReference Include="..\Smartstore.Web.Customize\Smartstore.Web.Customize.csproj" /> 
 		<ProjectReference Include="..\Smartstore\Smartstore.csproj" />
 		<ProjectReference Include="..\Smartstore.Core\Smartstore.Core.csproj" />
 		<ProjectReference Include="..\Smartstore.Web.Common\Smartstore.Web.Common.csproj" />
@@ -50,9 +51,13 @@
 	
 	<ItemGroup>
 		<Compile Remove="App_Data\**; Modules\**; Themes\**" />
+		<Compile Remove="Logs\**" />
 		<Content Remove="App_Data\**; Modules\**; Themes\**" />
+		<Content Remove="Logs\**" />
 		<EmbeddedResource Remove="App_Data\**; Modules\**; Themes\**" />
+		<EmbeddedResource Remove="Logs\**" />
 		<None Remove="App_Data\**; Modules\**; Themes\**" />
+		<None Remove="Logs\**" />
 	</ItemGroup>
 	
 	<!-- Copy publishable files in App_Data directory -->

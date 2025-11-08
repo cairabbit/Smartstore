@@ -238,3 +238,6 @@ src/Tools/Smartstore.WebApi.Client/Smartstore.WebApi.Client.sln
 
 src/Smartstore.Packager.sln
 Log.txt
+/src/Smartstore.Web/Views/Customize
+/src/Smartstore.Web/wwwroot/benevila
+/src/Smartstore.Web/wwwroot/customize

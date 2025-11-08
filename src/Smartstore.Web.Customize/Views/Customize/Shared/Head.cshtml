@@ -1,0 +1,12 @@
+﻿@{ 
+    var theme = Display.GetThemeDescriptor().Name.ToLower();
+}
+
+<widget target-zone="stylesheets">
+    <link rel="stylesheet" href="~/themes/@(theme)/theme.css" />
+    @if (WorkContext.WorkingLanguage.Rtl)
+    {
+        <link rel="stylesheet" href="~/themes/@(theme)/theme-rtl.css" />
+    } 
+    <link rel="stylesheet" href="~/bundle/css/site-customization.css" />
+</widget>
